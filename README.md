@@ -38,7 +38,7 @@ This project is mainly focused on the backend of a flowery-delivery website.
 
 ## Features
 
-http://localhost:7000/flowers
+[http://localhost:7000/flowers](http://localhost:7000/api/flowers/67d56cfc2b3513c3a77296cb)
 
 - GET /API/flowers
 
