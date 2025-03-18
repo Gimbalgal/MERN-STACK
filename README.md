@@ -31,7 +31,7 @@ This project is mainly focused on the backend of a flowery-delivery website.
 
 ## Live Demo
 
-[Live Demo Link](https://gimbalgal.github.io/MERN-STACK/)
+[Live Demo Link](https://flower-delivery-2.onrender.com)
 
 [Loom link](https://www.loom.com/share/6391bb98e8ed4e14b6801fdfd566ae60?sid=bed31666-115c-4e54-ad36-2beda5a5c07e)
 
