@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const ImageModel = require('../Image/image.Multer'); // Import your Image model
+const ImageModel = require('../Image/image.Multer'); 
 
 // GET all images
 router.get('/images', async (req, res) => {
     try {
-        const images = await ImageModel.find();  // Fetch all images from DB
+        const images = await ImageModel.find();  
         res.json(images);  
     } catch (error) {
         res.status(500).json({ message: 'Error fetching images', error });
