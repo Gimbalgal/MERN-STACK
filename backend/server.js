@@ -4,9 +4,10 @@ const cors = require('cors');
 const multer = require('multer');
 const mongoose = require('mongoose');
 const connectDB = require("./database");
-const flowerRouter = require('./routes/flowerRoute');
-const ImageModel = require('./models/imageModel');  
-const imageRoutes = require('./routes/imageRoute');
+const flowerRouter = require('./src/routes/flowerRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const ImageModel = require('./src/models/imageModel');  
+const imageRoutes = require('./src/routes/imageRoutes');
 
 const app = express();
 app.use(express.json());
@@ -64,6 +65,7 @@ app.use((req, res, next) => {
 
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
+app.use('/api/user', userRoutes);
 
 
 const PORT = process.env.PORT || 7000;

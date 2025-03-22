@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ImageModel = require('../Image/image.Multer'); 
+const ImageModel = require('../../Image/image.Multer'); 
 
 // GET all images
 router.get('/images', async (req, res) => {
