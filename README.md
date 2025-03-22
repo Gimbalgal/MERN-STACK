@@ -51,6 +51,9 @@ This project is mainly focused on the backend of a flowery-delivery website.
 - PATCH /API/flowers/:id
 - DELETE /API/flowers/:id
 
+- GET /API/user
+- API/user/login
+- API/user/signup
 
 ## Technologies Used
 
