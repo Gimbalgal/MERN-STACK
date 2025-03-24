@@ -116,8 +116,9 @@ This project mainly deals with the backend point. this focuses on the flowerCont
 Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
 
 ![Screenshoot](image.png)
-![Screenshoot2](![image](https://github.com/user-attachments/assets/a6c8d1cc-7edf-4258-9a80-c1d0e3e90865)
-)
+![image](https://github.com/user-attachments/assets/5a7e3784-6323-46ea-a13a-980d283f40c8)
+
+
 
 
 
