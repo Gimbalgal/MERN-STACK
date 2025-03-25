@@ -33,6 +33,8 @@ This project is mainly focused on the backend of a flowery-delivery website.
 
 [Live Demo Link](https://flower-delivery-2.onrender.com)
 
+[Live Demo Link](https://flower-delivery-3.onrender.com)
+
 
 [Loom link](https://www.loom.com/share/6391bb98e8ed4e14b6801fdfd566ae60?sid=bed31666-115c-4e54-ad36-2beda5a5c07e)
 
@@ -49,6 +51,10 @@ This project is mainly focused on the backend of a flowery-delivery website.
 - PATCH /API/flowers/:id
 - DELETE /API/flowers/:id
 
+[http://localhost:7000/flowers](localhost:7000/api/flowers/67d56cfc2b3513c3a77296cb)
+- GET /API/user
+- API/user/login
+- API/user/signup
 
 ## Technologies Used
 
@@ -110,6 +116,11 @@ This project mainly deals with the backend point. this focuses on the flowerCont
 Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
 
 ![Screenshoot](image.png)
+![image](https://github.com/user-attachments/assets/5a7e3784-6323-46ea-a13a-980d283f40c8)
+
+
+
+
 
 
 
