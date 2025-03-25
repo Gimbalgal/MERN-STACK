@@ -9,6 +9,8 @@ const userRoutes = require('./src/routes/userRoutes');
 const ImageModel = require('./src/models/imageModel');  
 const imageRoutes = require('./src/routes/imageRoutes');
 
+const path = require('path');
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -66,6 +68,19 @@ app.use((req, res, next) => {
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
 app.use('/api/user', userRoutes);
+
+
+
+
+// Serve the signup form
+app.get('/signup-form', (req, res) => {
+    res.sendFile(path.join(__dirname, 'signup.html'));
+});
+
+// Serve the login form
+app.get('/login-form', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
 
 
 const PORT = process.env.PORT || 7000;
