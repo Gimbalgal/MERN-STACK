@@ -51,11 +51,7 @@ This project is mainly focused on the backend of a flowery-delivery website.
 - PATCH /API/flowers/:id
 - DELETE /API/flowers/:id
 
-[http://localhost:7000/flowers](https://flower-delivery-5.onrender.com/signup-form)
-For testing the using signup, use the form above.
-
-[http://localhost:7000/flowers](https://flower-delivery-5.onrender.com/login-form)
-For testing the using login, use the form above.
+[http://localhost:7000/flowers](https://flower-delivery-5.onrender.com/api/flowers)
 - GET /API/user
 - API/user/login
 - API/user/signup
