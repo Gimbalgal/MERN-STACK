@@ -66,8 +66,8 @@ app.use((req, res, next) => {
 });
 
 // Serve the flowers page
-app.get('/flowers-page', (req, res) => {
-    res.sendFile(path.join(__dirname, 'flowers.html'));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'flower.html'));
 });
 
 // Flower & Image Routes
