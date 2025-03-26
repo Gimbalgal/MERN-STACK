@@ -65,6 +65,11 @@ app.use((req, res, next) => {
     next();
 });
 
+// Serve the flowers page
+app.get('/flowers-page', (req, res) => {
+    res.sendFile(path.join(__dirname, 'flowers.html'));
+});
+
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
 app.use('/api/user', userRoutes);
@@ -72,15 +77,7 @@ app.use('/api/user', userRoutes);
 
 
 
-// Serve the signup form
-app.get('/signup-form', (req, res) => {
-    res.sendFile(path.join(__dirname, 'signup.html'));
-});
 
-// Serve the login form
-app.get('/login-form', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
-});
 
 
 const PORT = process.env.PORT || 7000;
