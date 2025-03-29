@@ -9,7 +9,7 @@ const userRoutes = require('./src/routes/userRoutes');
 const ImageModel = require('./src/models/imageModel');  
 const imageRoutes = require('./src/routes/imageRoutes');
 
-const path = require('path');
+
 
 const app = express();
 app.use(express.json());
@@ -65,10 +65,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Serve the flowers page
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'flower.html'));
-});
+
 
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
