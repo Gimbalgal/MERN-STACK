@@ -1,0 +1,31 @@
+:root{
+  --primary-color: #4a90e2;
+  --error: red;
+}
+
+body{
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+header{
+  background-color: #fff;
+}
+
+header .container{
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a{
+  text-decoration: none;
+  color: #333
+}
+.admin{
+  padding: 20px;
+  margin: 0 auto;
+}

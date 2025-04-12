@@ -19,6 +19,8 @@ const flowerSchema = new Schema({
         type: String,
         required: true,
     },
+
+    // image: { type: mongoose.Schema.Types.ObjectId, ref: "ImageModel" } 
     
     image: { 
         data: Buffer, 
@@ -27,7 +29,7 @@ const flowerSchema = new Schema({
 }, { timestamps: true});
 
 
+const Flower = mongoose.model("Flower", flowerSchema);
+module.exports = Flower;
 
 
-
-module.exports = mongoose.model('Flower', flowerSchema)

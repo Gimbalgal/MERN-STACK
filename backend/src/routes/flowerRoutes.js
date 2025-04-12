@@ -1,34 +1,36 @@
-const express = require('express');
-const { 
-    createFlower, 
-    getFlower, 
-    getFlowers, 
-    deleteFlower, 
-    updateFlower 
+
+const express = require('express')
+const {
+    createFlower,
+    getFlower,
+    getFlowers,
+    deleteFlower,
+    updateFlower
 } = require('../controllers/flowerController');
 
-const upload = require('../../Image/image.Multer'); // Image upload middleware
+const upload = require('../../Image/imageMulter');
+
 
 const router = express.Router();
 
-// GET all flowers (Includes images)
+//  GET all flowers
 router.get('/', getFlowers);
 
-// GET a single flower by ID
-router.get('/:id', getFlower);
+//  GET a single flower by ID
+router.get('/:id', getFlower); 
 
-// CREATE a new flower with an image
+
+//  CREATE a new flower with image
 router.post(
-    "/",
-    upload.fields([{ name: "image", maxCount: 1 }]), 
+    '/',
+    upload.single('image'), 
     createFlower
 );
 
-// UPDATE a flower (Text fields + optional image)
+//  UPDATE flower with optional image
 router.patch('/:id', upload.single('image'), updateFlower);
 
-// DELETE a flower
+//  DELETE flower
 router.delete('/:id', deleteFlower);
 
 module.exports = router;
-

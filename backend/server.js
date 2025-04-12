@@ -11,6 +11,7 @@ const imageRoutes = require('./src/routes/imageRoutes');
 
 
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -24,6 +25,7 @@ const upload = multer({ storage });
 
 //  Upload single image & save to MongoDB
 app.post('/upload', upload.single('image'), async (req, res) => {
+    
     try {
         if (!req.file) {
             return res.status(400).json({ message: "No file uploaded" });
@@ -59,6 +61,7 @@ app.get('/image/:id', async (req, res) => {
     }
 });
 
+
 //  Log requests
 app.use((req, res, next) => {
     console.log(req.path, req.method);
@@ -73,11 +76,12 @@ app.use('/api/user', userRoutes);
 
 
 
-
-
-
-
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
     console.log(`Connected to DB and server is listening on port ${PORT}`);
 });
+
+
+
+
+
