@@ -9,11 +9,11 @@ body{
   font-family: sans-serif;
   font-size: 20px;
 }
-header{
+.admin{
   background-color: #fff;
 }
 
-header .container{
+.container{
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -21,11 +21,36 @@ header .container{
   justify-content: space-between;
 }
 
-header a{
+a{
   text-decoration: none;
   color: #333
 }
 .admin{
   padding: 20px;
   margin: 0 auto;
+}
+.admin{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+.flower-detail{
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flower-detail h4{
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+.flower-detail p{
+  width: 335px;
+  margin: 0;
+  font-size: 16px;
+  color: #333;
 }

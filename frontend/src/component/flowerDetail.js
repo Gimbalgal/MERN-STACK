@@ -10,9 +10,9 @@ const Flowerdetails = ({ flower }) => {
                 <p><strong>Description: </strong>{flower.description}</p>
                 <p><strong>Category: </strong>{flower.category}</p>
                 <p><strong>Price: </strong>${flower.price}</p>
-                {flower.image ? ( <img src={flower.image} alt={flower.name} /> ) : (
-                    <p>No image available</p>
-                )}
+                <p>{flower.CreatedAt}</p>
+    
+                
             </div>
         </section>
     );
