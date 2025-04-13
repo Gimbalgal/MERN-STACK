@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Flowerdetails from "../component/flowerDetail";
+import Flowerform from "../component/addflower";
+
 
 const Home = () => {
     const [flowers, setFlowers] = useState([]);
@@ -28,9 +29,10 @@ const Home = () => {
         <div className="admin">
             <div className="flower">
                 {flowers && flowers.map((flower) => (
-                    <Flowerdetails key={flower.id} flower={flower} />
+                    {/* <Flowers key={flower.id} flower={flower} /> */}
                 ))}
             </div>
+            <Flowerform />
         </div>
     );
 };

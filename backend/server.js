@@ -73,6 +73,8 @@ app.use((req, res, next) => {
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
 app.use('/api/user', userRoutes);
+app.use('/uploads', express.static('uploads'));
+
 
 
 

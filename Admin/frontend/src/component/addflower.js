@@ -10,24 +10,24 @@ const Flowerform = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const flower = { name, description, price, category };
+            const flower = { name, description, price, category };
 
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('description', description);
-        formData.append('price', price);
-        formData.append('category', category);
-        if (image) {
-            formData.append('image', image); // Append file
-        }
 
-        try {
+        
             const response = await fetch('/api/flowers', {
                 method: 'POST',
-                body: formData, // Send form data instead of JSON
+                body: 'JSON.strignify'('flowers'),
+                headers: {
+                    "Content-Type": "application/json",
+                } 
+            
             });
-
             const json = await response.json();
+
+            if (error){
+                setError(json.error);
+            }
+            
 
             if (!response.ok) {
                 setError(json.error);
@@ -40,10 +40,7 @@ const Flowerform = () => {
                 setError(null);
                 console.log('New flower added', json);
             }
-        } catch (err) {
-            setError('Something went wrong');
-            console.error(err);
-        }
+      
     };
 
     return (
@@ -66,7 +63,7 @@ const Flowerform = () => {
             <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
 
             <button>Add Flower</button>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <div className="error">{error}</div>}
         </form>
     );
 };
