@@ -8,7 +8,7 @@ const {
     updateFlower
 } = require('../controllers/flowerController');
 
-const upload = require('../../Image/imageMulter');
+const upload = require('../../middleware/multer');
 
 
 const router = express.Router();

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Flowerform from "../component/addflower";
+import Flowerdetails from "../component/flowerdetails";
 
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
         <div className="admin">
             <div className="flower">
                 {flowers && flowers.map((flower) => (
-                    {/* <Flowers key={flower.id} flower={flower} /> */}
+                <Flowerdetails key={flower.id} flower={flower} />
                 ))}
             </div>
             <Flowerform />

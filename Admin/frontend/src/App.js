@@ -17,7 +17,7 @@ function App() {
         <div className="admin">
           <Routes>
             <Route path="/" 
-              element={< Flowers/>} />
+              element={<Flowers/>} />
           </Routes>
         </div>
 
