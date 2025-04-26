@@ -1,5 +1,6 @@
 const Flower = require('../models/flowerModel');
 const mongoose = require('mongoose');
+const cloudinary = require('../../utils/cloudinary');
 
 // Get all flowers
 const getFlowers = async (req, res) => {
@@ -28,34 +29,62 @@ const getFlower = async (req, res) => {
 };
 
 // Create a new flower
+// const createFlower = async (req, res) => {
+//     console.log(" Incoming POST Request to /api/flowers");
+//     console.log(" Request Body:", req.body); 
+//     console.log(" Uploaded Image:", req.file || req.files); 
+
+//     const { name, description, price, category } = req.body;
+
+//     if (!name || !description || !price || !category) {
+//         console.log(" Missing Fields!"); 
+//         return res.status(400).json({ error: "All fields are required" });
+//     }
+
+//     try {
+//         const flower = await Flower.create({
+//             name,
+//             description,
+//             price,
+//             category,
+//             image: req.files?.image ? req.files.image[0].path : null
+//         });
+//         console.log(" Flower Saved to Database:", flower); // Debugging
+//         res.status(201).json(flower);
+//     } catch (error) {
+//         console.error(" Database Error:", error.message);
+//         res.status(400).json({ error: error.message });
+//     }
+// };
+
+
 const createFlower = async (req, res) => {
-    console.log(" Incoming POST Request to /api/flowers");
-    console.log(" Request Body:", req.body); 
-    console.log(" Uploaded Image:", req.file || req.files); 
+    console.log("Incoming POST Request to /api/flowers");
+    console.log("Uploaded file info:", req.file);
 
     const { name, description, price, category } = req.body;
 
-    if (!name || !description || !price || !category) {
-        console.log(" Missing Fields!"); 
-        return res.status(400).json({ error: "All fields are required" });
+    if (!name || !description || !price || !category || !req.file) {
+        return res.status(400).json({ error: "All fields are required, including image" });
     }
 
     try {
+        // Use the Cloudinary URL from req.file.path
         const flower = await Flower.create({
             name,
             description,
             price,
             category,
-            image: req.files?.image ? req.files.image[0].path : null
+            image: req.file.path, // Use the Cloudinary URL directly
         });
-        console.log(" Flower Saved to Database:", flower); // Debugging
+
+        console.log("Flower saved:", flower);
         res.status(201).json(flower);
     } catch (error) {
-        console.error(" Database Error:", error.message);
-        res.status(400).json({ error: error.message });
+        console.error("Error saving flower:", error);
+        res.status(500).json({ error: error.message });
     }
 };
-
 
 // Delete a flower
 const deleteFlower = async (req, res) => {
