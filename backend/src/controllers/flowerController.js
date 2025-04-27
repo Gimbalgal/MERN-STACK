@@ -76,7 +76,9 @@ const createFlower = async (req, res) => {
             price,
             category,
             image: req.file.path, // Use the Cloudinary URL directly
+
         });
+        console.log("Uploaded file info:", req.file);
 
         console.log("Flower saved:", flower);
         res.status(201).json(flower);
