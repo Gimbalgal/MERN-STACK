@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import hamburge from '../asset/hamburge.svg'
 import leftmenu from '../asset/leftmenu.svg'
 import '../index.css'
