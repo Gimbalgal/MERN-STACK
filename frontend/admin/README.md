@@ -37,38 +37,40 @@ This is a full functional e-commerce website for flower delivery. The admin can 
 
 ## Live Demo
 
-Check out the live demo of the project: [Live Demo Link](https://example.com)
+[Live Demo Link](https://flower-delivery-13.onrender.com)
+
+[Loom Link](https://www.loom.com/share/0892b505afc442fa9ad6deae1bb7a92f?sid=cc2073bc-d3cf-4f1e-bf59-c7f161fb0b2a)
 
 
 ## Features
 
-- List the main features of your project.
+- Mobile version of the admin panel.
 
-- Use bullet points for clarity.
+- The admin can add or delete a flower.
 
-- Include anything that makes your project stand out.
+- This panel is only used by the admin.
 
 
 ## Technologies Used
 
-- HTML
+- Node.js
 
 - CSS
 
 - JavaScript
 
-- Any other frameworks, libraries, or tools used (e.g., Bootstrap, Tailwind CSS, React)
+- React
 
 
 ## Setup and Installation
 
 Explain how to set up and run your project locally. Include prerequisites, installation steps, and any necessary configurations.
 
-1\. **Clone the repository:**
+1\. **Create a folder:**
 
-    ```sh
+    ```npx create-react-app admin
 
-    git clone https://github.com/your-username/your-repo-name.git
+ 
 
     ```
 
@@ -115,16 +117,16 @@ Explain how to set up and run your project locally. Include prerequisites, insta
 
 ## Usage
 
-Provide instructions on how to use your project. Explain any command-line options, configuration settings, or other user interactions.
+User will signin with name, email and password and longin with that same email and password to be able to validated to use the website.
 
 
 ## Screenshots
 
 Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
 
-![Screenshot 1](path/to/screenshot1.png)
+![Screenshot 1](![alt text](image.png))
 
-![Screenshot 2](path/to/screenshot2.png)
+![Screenshot 2](![alt text](image-1.png))
 
 
 ## License
@@ -136,18 +138,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author(s)
 
-Provide information on the authors of the project. Include names, email addresses, and links to GitHub profiles or other relevant profiles.
 
-- **Name:** Your Name
 
-- **Email:** your-email@example.com
+- **Name:** Victoria Augustine Ishabo
 
-- **GitHub:** [your-username](https://github.com/your-username)
+- **Email:** victoriaishabo55@gmail.com
 
-If there are multiple authors, list them all:
+- **GitHub:** [your-username](https://github.com/Gimbalgal/Gimbalgal)
 
-- **Name:** Co-Author Name
-
-- **Email:** co-author-email@example.com
-
-- **GitHub:** [co-author-username](https://github.com/co-author-username)
