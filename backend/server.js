@@ -12,9 +12,6 @@ const uploadRoute = require('./src/routes/routeupload'); // Import the upload ro
 
 
 
-
-
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -77,7 +74,10 @@ app.use((req, res, next) => {
 // Flower & Image Routes
 app.use('/api/flowers', flowerRouter);  
 app.use('/api/user', userRoutes);
-app.use('/api/upload', uploadRoute);
+// app.use('/api/upload', uploadRoute);
+
+
+
 
 
 

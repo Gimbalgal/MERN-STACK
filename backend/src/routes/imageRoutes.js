@@ -55,6 +55,7 @@ const multer = require('multer');
 const mongoose = require('mongoose');
 
 const router = express.Router();
+const ImageModel = require('../../middleware/multer'); // Import the ImageModel from multer.js
 
 // Multer for in-memory storage
 const storage = multer.memoryStorage();

@@ -1,21 +1,34 @@
+// const multer = require('multer');
 
+// const storage = multer.diskStorage({
+// filename: function (req,file,cb) {
+//     cb(null, file.originalname)
+//     }
+// });
 
-// const multer = require("multer");
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage });
-
+// const upload = multer({storage: storage});
 
 // module.exports = upload;
 
-
 const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-const storage = multer.diskStorage({
-    filename: function (req,file,cb) {
-    cb(null, file.originalname)
-}
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const upload = multer({storage: storage});
+// Set up Cloudinary storage
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+      folder: 'flowers', // Optional: specify folder name in Cloudinary
+      allowed_formats: ['jpg', 'jpeg', 'png'], // Optional: restrict allowed formats
+    },
+});
+
+const upload = multer({ storage: storage });
 
 module.exports = upload;

@@ -8,8 +8,9 @@ const {
     updateFlower
 } = require('../controllers/flowerController');
 
-const upload = require('../../middleware/multer');
+const cloudinary = require('../../utils/cloudinary');
 
+const upload = require('../../middleware/multer'); 
 
 const router = express.Router();
 
@@ -19,13 +20,16 @@ router.get('/', getFlowers);
 //  GET a single flower by ID
 router.get('/:id', getFlower); 
 
+router.post('/', upload.single('image'), createFlower);
 
-//  CREATE a new flower with image
-router.post(
-    '/',
-    upload.single('image'), 
-    createFlower
-);
+
+
+// CREATE a new flower with an image
+// router.post(
+//     "/",
+//     upload.fields([{ name: "image", maxCount: 1 }]), 
+//     createFlower
+// );
 
 //  UPDATE flower with optional image
 router.patch('/:id', upload.single('image'), updateFlower);

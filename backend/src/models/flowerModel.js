@@ -23,8 +23,8 @@ const flowerSchema = new Schema({
     // image: { type: mongoose.Schema.Types.ObjectId, ref: "ImageModel" } 
     
     image: { 
-        data: Buffer, 
-        contentType: String 
+        type: String, 
+        required: true 
     }
 }, { timestamps: true});
 
