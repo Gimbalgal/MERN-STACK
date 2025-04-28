@@ -124,7 +124,7 @@ function AddFlower({ onFlowerAdded }) {
       <input name="price" value={flower.price} onChange={handleChange} placeholder="Price" className="w-full p-2 border rounded" type="number" required />
       <input type="file" accept="image/*" onChange={handleImageChange} className="w-full p-2 border rounded" required />
 
-      {/* 🌸 Preview Section */}
+      {/*  Preview Section */}
       {previewUrl && (
         <img src={previewUrl} alt="Preview" className="w-full h-48 object-cover rounded border" />
       )}
