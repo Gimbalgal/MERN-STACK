@@ -28,6 +28,14 @@ const createFlower = async (req, res) => {
     console.log("Uploaded file info:", req.file);
 
     const { name, description, price, category } = req.body;
+    let emptyFields = [];
+    if (!name) emptyFields.push("name");
+    if (!description) emptyFields.push("description");
+    if (!price) emptyFields.push("price");
+    if (!category) emptyFields.push("category");
+    if (emptyFields.length > 0) {
+        return res.status(400).json({ error: "Please fill in all fields", emptyFields });
+    }
 
     if (!name || !description || !price || !category || !req.file) {
         return res.status(400).json({ error: "All fields are required, including image" });
