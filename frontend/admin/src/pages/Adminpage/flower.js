@@ -1,5 +1,4 @@
 
-//
 
 import React, { useState, useEffect } from "react";
 import AddFlower from "./addflower";
@@ -7,8 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Flower() {
-  const [flowers, setFlowers] = useState([]);
-  const [emptyField, setEmptyField] = useState([]); // State to track empty fields
+  const [flowers, setFlowers] = useState([]); // State to store flowers
 
   // Fetch flowers from the backend
   const fetchFlowers = async () => {
@@ -17,12 +15,9 @@ function Flower() {
       const data = await response.json();
 
       if (data.errors) {
-        // If backend returns errors, set them in the emptyField state
-        setEmptyField(data.errors);
         toast.error("Some fields are missing!");
       } else {
         setFlowers(data);
-        setEmptyField([]); // Clear any previous errors
         toast.success("Flowers fetched successfully!");
       }
     } catch (error) {
@@ -46,14 +41,12 @@ function Flower() {
     if (!newFlower.category) missingFields.push("Category");
 
     if (missingFields.length > 0) {
-      setEmptyField(missingFields); // Set the missing fields in the state
       toast.error("Please fill in all required fields!");
       return;
     }
 
     // If no fields are missing, proceed to add the flower
     setFlowers([...flowers, newFlower]);
-    setEmptyField([]); // Clear any previous errors
     toast.success("Flower added successfully!");
   };
 
@@ -72,76 +65,65 @@ function Flower() {
   };
 
   return (
-    <div className="p-4">
+    <div className="custom-container">
       {/* Header Section */}
       <div className="header">
-        <h1 className="panel-h1">Admin Panel</h1>
+        <h1 className="title">Admin Panel</h1>
         <div className="button-group">
-          <button onClick={fetchFlowers} className="fetch-button">
+          <button onClick={fetchFlowers} className="btn btn-dark btn-sm">
             Flower
           </button>
-          <button onClick={() => console.log("Add Flower Button Clicked")} className="add-button">
+          <button onClick={() => console.log("Add Flower Button Clicked")} className="btn btn-outline-dark btn-sm">
             Add Flower
           </button>
         </div>
       </div>
       <hr className="divider" />
 
-      {/* Display Errors */}
-      {emptyField.length > 0 && (
-        <div className="error-message">
-          <p>Please fill in the following fields:</p>
-          <ul>
-            {emptyField.map((field, index) => (
-              <li key={index}>{field}</li>
-            ))}
-          </ul>
+      {/* Main Content */}
+      <div className="content">
+        {/* Left: Add Flower Form */}
+        <div className="form">
+          <AddFlower onFlowerAdded={handleAddFlower} />
         </div>
-      )}
 
-      {/* Add Flower Form */}
-      <AddFlower onFlowerAdded={handleAddFlower} />
-
-      {/* Flower List */}
-      <div className="flower-details">
-        <h2 className="panel-h2">Flower List</h2>
-        {flowers.length === 0 ? (
-          <p>No flowers available</p>
-        ) : (
-          flowers.map((flower) => (
-            <div
-              key={flower._id}
-              className="border rounded p-4 mb-4 flex items-start space-x-4"
-            >
-              <img
-                src={flower.image}
-                alt={flower.name}
-                className="flower-image"
-              />
-              <div className="flex-1">
-                <p>
-                  <strong>Name:</strong> {flower.name}
-                </p>
-                <p>
-                  <strong>Description:</strong> {flower.description}
-                </p>
-                <p>
-                  <strong>Price:</strong> ${flower.price}
-                </p>
-                <p>
-                  <strong>Category:</strong> {flower.category}
-                </p>
+        {/* Right: Flower Details */}
+        <div className="flower-details">
+          <h2 className="subtitle">Flower List</h2>
+          {flowers.length === 0 ? (
+            <p className="empty-message">No flowers available</p>
+          ) : (
+            flowers.map((flower) => (
+              <div key={flower._id} className="flower-card">
+                <img
+                  src={flower.image}
+                  alt={flower.name}
+                  className="flower-image"
+                />
+                <div className="flower-info">
+                  <p>
+                    <strong>Name:</strong> {flower.name}
+                  </p>
+                  <p>
+                    <strong>Description:</strong> {flower.description}
+                  </p>
+                  <p>
+                    <strong>Price:</strong> ${flower.price}
+                  </p>
+                  <p>
+                    <strong>Category:</strong> {flower.category}
+                  </p>
+                </div>
+                <button
+                  onClick={() => handleDeleteFlower(flower._id)}
+                  className="btn btn-danger"
+                >
+                  <span className="material-symbols-outlined">delete</span>
+                </button>
               </div>
-              <button
-                onClick={() => handleDeleteFlower(flower._id)}
-                className="delete-button"
-              >
-                <span class="material-symbols-outlined">
-                delete    </span>
-              </button>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </div>
 
       <ToastContainer />

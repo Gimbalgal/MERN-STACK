@@ -1,3 +1,6 @@
+
+*,
+
 body {
   margin: 0;
   padding: 0;
@@ -5,199 +8,191 @@ body {
 }
 
 .nav{
-  margin: auto; 
-  padding: 10px 0; 
-  background-color: beige; 
-} 
-
-input{
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  display: block;
-}
-form button{
-  background-color:#ddd;
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  font-family: "Montserrat"; 
-  cursor: pointer;
-}
-#form{
-  margin: 7%;
-  padding: 20px;
-  width: 50%;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 500px;
+  background-color: #ffff;
 }
 
-
-.nav-menu{ 
+.nav-menu{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-left: 3%;
-}
-.nav-logo{
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 400; 
-  color: #333;
-  margin: 3%;
-}
-.leftmenu{
-  margin-right: 10%;
+  justify-content: space-around;
 }
 
-.home{
-  display: grid;
-  grid-template-columns: repeat(1fr);
+.nav-logo{
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+}
+
+.panel-h1{
+  color: red;
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+
+a.brand-logo{
+  text-decoration: none;
+  color: #333;
+  font-family: "Montserrat";
+  font-size: 20px;
+  /* transform: translateY(200%); */
+}
+.btn-text{
+  font-family:"Sans-serif"; 
+  font-size: 12px;
+}
+.content{
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
-.panel-h1{
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  margin: 3%;
-}
-
-.panel-h2{
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-}
-.addflower{
-  font-family: "montserrat", sans-serif;
-  font-size: 18px;
-}
-.flex-1 p{
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  margin: 0;
-}
-.flower-details{
-  display: grid;
-  background-color: #fff;
-  border-radius: 4px;
-  margin: 20px 0 10px 0; 
-  padding: 20px;
-  /* position: relative; */
-  box-shadow: 2p 2px 5px rgba(0,0,0,0.05);
-
-}
-.flower-image{
-  width: 50%;
-  height: auto;
-  border-radius: 4px;
-  gap: 50%;
-} 
-
-.delete-button{
-  padding: 10px;
-  background-color: #ff4d4d;
-  color: #fff;
-  border-radius: 4px;
-  margin: 3%;
-  
-}
-
-.header {
+.header{
   display: flex;
-  justify-content: space-between; /* Space between Admin Panel and buttons */
-  align-items: center; /* Vertically align items */
-  margin: 7%; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+  background-color: #fff;
 }
-.divider{
-  width: 100%; 
-  height: 1px;
-  background-color: #ddd;
-  margin-top: -40px;
+
+.title{
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+  margin-top: 20px;
+  margin-left: 6%;
 }
 .button-group{
-  margin: 7%;
+  display: flex;
+  gap: 10px;
+  margin-top: 29px;
+  margin-right: 3%;
+}
+.button-group button{
+  border-radius: 8px;
+}
+
+.hamburger-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.divider{
+  width: 100%;
+  height: 1px; 
+  margin-bottom: 0;
+  background-color: #ccc;
+}
+
+.subtitle{
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+}
+.flower-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+
+}
+.addflower{
+  font-family: "Sans-serif";
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+.flower-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+.flower-info{
+  display: flex;
+  flex-direction: column;
+  font-family: "Sans-serif";
+  font-size: 12px;
+  gap: 5px;
+
 }
 
 @media(min-width: 768px){
-  .home{
-    display: grid;
-    grid-template-columns: repeat(2fr, 1fr);
-    gap: 100px; /* Two columns on larger screens */
+  .flower-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-}
-.flex-1{
-  background: #fff;
-  border-radius: 4px;
-  margin-left: 45%;
-  padding: 20px;
-  transform: translateY(-200%);
-  position: relative;
-}
-
-.flower-image{
-  width: 40%;
-} 
-
-.flex-1 p{
-  font-size: 14px;
-  font-weight: 600;
-}
-.delete-button{
-  transform: translateY(-250%);
-}
-.fetch-button{
-  background-color: black;
-  color: #ddd;
-  gap: 20px;
-  border-radius: 4px;
-}
-.add-button{
-  background-color: #fff;
-  color: #333;
-  border-radius: 4px;
-}
-.panel-h1{
-  font-size: 20px;
-  font-weight: 600;
-}
-.panel-h2{
-  font-size: 16px;
-  font-weight: 400;
-}
-
-@media(min-width:1024px){
-.home{
-  display: grid;
-  grid-template-columns: repeat(3fr, 1fr);
-  gap: 100px; /* Three columns on larger screens */
-  } 
-  
-  .flex-1{
-    font-size: 40px;
-    font-weight: 700;
-  }
-  input{
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  .flex-1 p{
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .panel-h1{
-    font-size: 24px;
-    font-weight: 600;
-  }
-  .panel-h2{
+  .title{
     font-size: 20px;
     font-weight: 400;
+    margin-top: 30px;
+  }
+  .btn-sm{
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+  .subtitle{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+  .button-group{
+    margin-top: 30px;
+  }
+  .form{
+    margin-top: 30px;
+  }
+  .flower-info{
+    font-size: 14px;
+  }
+}
+
+@media(min-width: 1024px){
+  .content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+  .form{
+    order: 2;
+  }
+  .flower-details{
+    order: 1;
+  }
+  .btn-sm{
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+  .title{
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-left: 3%;
+  }
+  .button-group{
+    margin-top: 50px;
+  }
+  .subtitle{
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-left: 3%;
+  }
+  .form{
+    margin-top: 50px;
+  }
+  .flower-info{
+    font-size: 16px;
   }
 }
