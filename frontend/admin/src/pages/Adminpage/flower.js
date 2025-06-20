@@ -1,7 +1,6 @@
 
-
 import React, { useState, useEffect } from "react";
-import AddFlower from "./addflower";
+import AddFlower from "./AddFlower";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,7 +10,7 @@ function Flower() {
   // Fetch flowers from the backend
   const fetchFlowers = async () => {
     try {
-      const response = await fetch("http://localhost:7000/api/flowers"); // Replace with your backend endpoint
+      const response = await fetch("https://flower-delivery-3.onrender.com/api/flowers"); 
       const data = await response.json();
 
       if (data.errors) {

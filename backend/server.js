@@ -8,7 +8,7 @@ const flowerRouter = require('./src/routes/flowerRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const ImageModel = require('./src/models/imageModel');  
 const imageRoutes = require('./src/routes/imageRoutes');
-const uploadRoute = require('./src/routes/routeupload'); // Import the upload route
+const uploadRoute = require('./src/routes/routeUpload') // Import the upload route
 
 
 
@@ -75,10 +75,6 @@ app.use((req, res, next) => {
 app.use('/api/flowers', flowerRouter);  
 app.use('/api/user', userRoutes);
 // app.use('/api/upload', uploadRoute);
-
-
-
-
 
 
 
