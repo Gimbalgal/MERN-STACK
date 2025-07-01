@@ -52,7 +52,7 @@ function Flower() {
   // Handle deleting a flower
   const handleDeleteFlower = async (id) => {
     try {
-      await fetch(`http://localhost:7000/api/flowers/${id}`, {
+      await fetch(`https://flower-delivery-3.onrender.com/api/flowers/${id}`, {
         method: "DELETE",
       });
       setFlowers(flowers.filter((flower) => flower._id !== id));

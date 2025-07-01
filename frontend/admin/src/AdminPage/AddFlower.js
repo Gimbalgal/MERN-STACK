@@ -29,7 +29,7 @@ function AddFlower({ onFlowerAdded }) {
     Object.keys(flower).forEach((key) => formData.append(key, flower[key]));
     formData.append("image", image);
 
-    const res = await fetch("http://localhost:7000/api/flowers", {
+    const res = await fetch("https://flower-delivery-3.onrender.com/api/flowers", {
       method: "POST",
       body: formData,
     });
