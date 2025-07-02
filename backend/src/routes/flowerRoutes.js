@@ -23,15 +23,6 @@ router.get('/:id', getFlower);
 router.post('/', upload.single('image'), createFlower);
 
 
-
-// CREATE a new flower with an image
-// router.post(
-//     "/",
-//     upload.fields([{ name: "image", maxCount: 1 }]), 
-//     createFlower
-// );
-
-//  UPDATE flower with optional image
 router.patch('/:id', upload.single('image'), updateFlower);
 
 //  DELETE flower
