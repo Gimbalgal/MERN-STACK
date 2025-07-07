@@ -19,7 +19,7 @@ function AddFlower({ onFlowerAdded }) {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
-    setPreviewUrl(URL.createObjectURL(file)); // 🖼️ set preview URL
+    setPreviewUrl(URL.createObjectURL(file)); //  set preview URL
   };
 
   const handleSubmit = async (e) => {
